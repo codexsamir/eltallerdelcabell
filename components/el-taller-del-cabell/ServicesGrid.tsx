@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { Plus } from 'lucide-react';
 import { serviceItems } from './data';
@@ -13,13 +13,30 @@ const categories = ['Cortes', 'Color', 'Tratamientos', 'Peinado'] as const;
 export function ServicesGrid() {
   const [activeCategory, setActiveCategory] = useState<(typeof categories)[number]>('Cortes');
   const [isFading, setIsFading] = useState(false);
+  const [indicator, setIndicator] = useState({ left: 0, width: 0 });
+  const buttonRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   const filtered = useMemo(
     () => serviceItems.filter((item) => item.category === activeCategory),
     [activeCategory]
   );
 
-  const activeIndex = categories.indexOf(activeCategory);
+  useEffect(() => {
+    const updateIndicator = () => {
+      const activeIndex = categories.indexOf(activeCategory);
+      const activeButton = buttonRefs.current[activeIndex];
+      if (!activeButton) return;
+
+      setIndicator({
+        left: activeButton.offsetLeft,
+        width: activeButton.offsetWidth
+      });
+    };
+
+    updateIndicator();
+    window.addEventListener('resize', updateIndicator);
+    return () => window.removeEventListener('resize', updateIndicator);
+  }, [activeCategory]);
 
   function handleCategory(category: (typeof categories)[number]) {
     if (category === activeCategory) return;
@@ -41,15 +58,18 @@ export function ServicesGrid() {
 
         <div className="premium-shadow relative inline-flex rounded-full bg-[#fafaf8] p-1">
           <div
-            className="absolute bottom-1 top-1 rounded-full bg-[#8C6A5D] transition-all duration-300"
+            className="absolute bottom-1 left-0 top-1 rounded-full bg-[#8C6A5D] transition-all duration-300"
             style={{
-              width: `${100 / categories.length}%`,
-              transform: `translateX(${activeIndex * 100}%)`
+              width: `${indicator.width}px`,
+              transform: `translateX(${indicator.left}px)`
             }}
           />
           {categories.map((category) => (
             <button
               key={category}
+              ref={(element) => {
+                buttonRefs.current[categories.indexOf(category)] = element;
+              }}
               onClick={() => handleCategory(category)}
               className={`relative z-10 rounded-full px-5 py-2 text-sm uppercase tracking-wide transition-all duration-300 ease-out ${
                 category === activeCategory ? 'text-[#fafaf8]' : 'text-[#2E2E2E]/80'

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { CalendarDays, Instagram, Menu, X } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 const links = [
   { href: '#services', label: 'Servicios' },
@@ -12,6 +13,13 @@ const links = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === '/';
+
+  const resolvedLinks = links.map((link) => ({
+    ...link,
+    href: isHome ? link.href : `/${link.href}`
+  }));
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-8">
@@ -21,7 +29,7 @@ export function Navbar() {
       >
         <div className="relative flex h-full items-center justify-between">
           <div className="hidden items-center gap-6 md:flex">
-            {links.map((link) => (
+            {resolvedLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
@@ -72,7 +80,7 @@ export function Navbar() {
           className={`overflow-hidden transition-all duration-300 ease-out md:hidden ${open ? 'max-h-64 pt-3' : 'max-h-0'}`}
         >
           <div className="flex flex-col gap-3 rounded-3xl bg-[#fafaf8]/80 p-4">
-            {links.map((link) => (
+            {resolvedLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
