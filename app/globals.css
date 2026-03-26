@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #fafaf8;
+  color: #2e2e2e;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Playfair Display', serif;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.premium-shadow {
+  box-shadow:
+    rgba(14, 63, 126, 0.04) 0px 0px 0px 1px,
+    rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px,
+    rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px,
+    rgba(42, 51, 70, 0.04) 0px 6px 6px -3px,
+    rgba(14, 63, 126, 0.04) 0px 12px 12px -6px,
+    rgba(14, 63, 126, 0.04) 0px 24px 24px -12px;
+}
+
+@keyframes blur-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-blur-in {
+  animation: blur-in 0.8s ease-out forwards;
+}
+
+@keyframes nav-in {
+  from {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-nav-in {
+  animation: nav-in 0.8s ease-out forwards;
+}
+
+.reveal-card {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 700ms ease-out, transform 700ms ease-out;
+}
+
+.reveal-card.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.reveal-text {
+  opacity: 0;
+}
+
+.reveal-text.is-visible {
+  opacity: 1;
+}
+
+@keyframes scroll-down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scroll-up {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.testimonial-col-down {
+  animation: scroll-down 30s linear infinite;
+}
+
+.testimonial-col-up {
+  animation: scroll-up 30s linear infinite;
+}
+
+.testimonial-track:hover .testimonial-col-down,
+.testimonial-track:hover .testimonial-col-up {
+  animation-duration: 60s;
+}
