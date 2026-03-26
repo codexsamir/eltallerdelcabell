@@ -19,7 +19,7 @@ type SalonContextValue = {
 const SalonContext = createContext<SalonContextValue | null>(null);
 
 export function SalonProvider({ children }: { children: ReactNode }) {
-  const [selectedService, setSelectedService] = useState('Women\'s Haircut');
+  const [selectedService, setSelectedService] = useState('Corte Mujer');
   const [appointments, setAppointments] = useState<Appointment[]>([]);
 
   const value = useMemo(

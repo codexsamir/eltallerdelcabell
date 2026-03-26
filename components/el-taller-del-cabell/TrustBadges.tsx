@@ -6,23 +6,23 @@ import { RevealCard } from './RevealCard';
 const badges = [
   {
     icon: Scissors,
-    title: 'Experienced Stylists',
-    text: 'Skilled professionals who understand your hair.'
+    title: 'Estilistas con experiencia',
+    text: 'Profesionales que entienden lo que tu cabello necesita.'
   },
   {
     icon: Star,
-    title: 'Highly Rated Locally',
-    text: 'Trusted by loyal clients in Calafell.'
+    title: 'Muy valorado en la zona',
+    text: 'Confianza ganada con clientas y clientes fieles en Calafell.'
   },
   {
     icon: Leaf,
-    title: 'Hair Health First',
-    text: 'Treatments that protect and restore.'
+    title: 'Salud capilar primero',
+    text: 'Tratamientos que cuidan, protegen y restauran.'
   },
   {
     icon: MessageCircle,
-    title: 'Personalized Attention',
-    text: 'We listen and tailor every service.'
+    title: 'Atencion personalizada',
+    text: 'Escuchamos y adaptamos cada servicio a ti.'
   }
 ];
 

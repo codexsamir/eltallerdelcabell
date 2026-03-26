@@ -3,16 +3,16 @@ import { Facebook, Instagram } from 'lucide-react';
 
 const groups = [
   {
-    title: 'Shop / Services',
-    links: ['Haircuts', 'Color', 'Treatments', 'Styling']
+    title: 'Servicios',
+    links: ['Cortes', 'Color', 'Tratamientos', 'Peinado']
   },
   {
-    title: 'About',
-    links: ['Our Salon', 'Reviews', 'Gallery']
+    title: 'Nosotros',
+    links: ['Nuestro Salon', 'Resenas', 'Galeria']
   },
   {
-    title: 'Support',
-    links: ['Book Appointment', 'Contact', 'FAQs']
+    title: 'Soporte',
+    links: ['Reservar Cita', 'Contacto', 'Preguntas Frecuentes']
   }
 ];
 
@@ -27,7 +27,7 @@ export function Footer() {
         <div className="grid gap-10 lg:grid-cols-4">
           <div>
             <p className="text-2xl">El Taller del Cabell</p>
-            <p className="mt-3 text-[#2E2E2E]/80">Care, style, and confidence in every visit.</p>
+            <p className="mt-3 text-[#2E2E2E]/80">Cuidado, estilo y confianza en cada visita.</p>
             <div className="mt-5 flex gap-3">
               <Link
                 href="https://instagram.com"
@@ -70,11 +70,11 @@ export function Footer() {
         <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-[#2E2E2E]/15 pt-6 text-sm text-[#2E2E2E]/70 md:flex-row md:items-center">
           <p>© 2026 El Taller del Cabell</p>
           <div className="flex gap-6">
-            <Link href="/" aria-label="Privacy policy">
-              Privacy Policy
+            <Link href="/" aria-label="Politica de privacidad">
+              Privacidad
             </Link>
-            <Link href="/" aria-label="Terms of service">
-              Terms
+            <Link href="/" aria-label="Terminos de servicio">
+              Terminos
             </Link>
           </div>
         </div>

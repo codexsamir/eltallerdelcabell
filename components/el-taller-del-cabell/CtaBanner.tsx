@@ -5,9 +5,9 @@ import { ArrowRight, Leaf, Scissors, Star } from 'lucide-react';
 import { RevealCard } from './RevealCard';
 
 const values = [
-  { icon: Scissors, text: 'Personalized styling' },
-  { icon: Leaf, text: 'Healthy hair treatments' },
-  { icon: Star, text: 'Trusted local salon' }
+  { icon: Scissors, text: 'Peinado personalizado' },
+  { icon: Leaf, text: 'Tratamientos saludables' },
+  { icon: Star, text: 'Salon local de confianza' }
 ];
 
 export function CtaBanner() {
@@ -28,8 +28,8 @@ export function CtaBanner() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#2E2E2E]/75 via-[#2E2E2E]/45 to-[#2E2E2E]/20" />
 
           <div className="relative z-10 max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.3em] text-[#fafaf8]/80">Book Your Visit</p>
-            <h2 className="mt-4 text-balance text-5xl text-[#fafaf8] md:text-6xl">Your hair deserves expert care</h2>
+            <p className="text-xs uppercase tracking-[0.3em] text-[#fafaf8]/80">Reserva tu visita</p>
+            <h2 className="mt-4 text-balance text-5xl text-[#fafaf8] md:text-6xl">Tu cabello merece cuidado experto</h2>
           </div>
 
           <div className="relative z-10 mt-8 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
@@ -45,9 +45,9 @@ export function CtaBanner() {
             <Link
               href="/services/booking"
               className="group premium-shadow inline-flex items-center gap-2 rounded-full bg-[#8C6A5D] px-7 py-4 text-sm uppercase tracking-wide text-[#fafaf8] transition-all duration-300 ease-out hover:scale-[1.02]"
-              aria-label="Book your visit"
+              aria-label="Reservar visita"
             >
-              Book Your Visit
+              Reservar visita
               <ArrowRight className="transition-all duration-300 ease-out group-hover:translate-x-1" size={16} />
             </Link>
           </div>

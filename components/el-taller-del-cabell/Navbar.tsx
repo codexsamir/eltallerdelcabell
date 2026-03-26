@@ -16,7 +16,7 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-8">
       <nav
-        aria-label="Main navigation"
+        aria-label="Navegacion principal"
         className="animate-nav-in premium-shadow mx-auto h-[68px] max-w-7xl rounded-3xl border border-[rgba(255,255,255,0.32)] bg-[rgba(255,255,255,0.4)] px-5 backdrop-blur-md"
       >
         <div className="relative flex h-full items-center justify-between">
@@ -36,7 +36,7 @@ export function Navbar() {
           <Link
             href="/"
             className="absolute left-1/2 -translate-x-1/2 text-lg tracking-[0.15em] text-[#2E2E2E]"
-            aria-label="El Taller del Cabell home"
+            aria-label="Inicio El Taller del Cabell"
           >
             EL TALLER DEL CABELL
           </Link>
@@ -53,7 +53,7 @@ export function Navbar() {
             <Link
               href="/services/booking"
               className="premium-shadow rounded-full bg-[#8C6A5D] px-4 py-2 text-sm text-[#fafaf8] transition-all duration-300 ease-out hover:scale-105"
-              aria-label="Book appointment"
+              aria-label="Reservar cita"
             >
               Reservar
             </Link>
@@ -62,7 +62,7 @@ export function Navbar() {
           <button
             className="rounded-full p-2 text-[#2E2E2E] md:hidden"
             onClick={() => setOpen((prev) => !prev)}
-            aria-label="Toggle menu"
+            aria-label="Abrir menu"
           >
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -83,13 +83,13 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link href="/services" className="text-sm uppercase tracking-wide" aria-label="Services page">
+            <Link href="/services" className="text-sm uppercase tracking-wide" aria-label="Pagina de servicios">
               Catalogo completo
             </Link>
             <Link
               href="/services/booking"
               className="premium-shadow inline-flex w-fit items-center gap-2 rounded-full bg-[#8C6A5D] px-4 py-2 text-sm text-[#fafaf8]"
-              aria-label="Book appointment"
+              aria-label="Reservar cita"
             >
               <CalendarDays size={14} /> Reservar cita
             </Link>

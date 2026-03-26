@@ -7,26 +7,26 @@ import { SectionHeading } from './SectionHeading';
 
 const cards = [
   {
-    title: 'Tailored Haircuts',
-    text: 'We design each cut to suit your face, style, and routine.',
+    title: 'Cortes a medida',
+    text: 'Disenamos cada corte segun tu rostro, estilo y rutina.',
     image:
       'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=900&q=80'
   },
   {
-    title: 'Natural Color Results',
-    text: 'Soft, blended tones that enhance your natural beauty.',
+    title: 'Color natural',
+    text: 'Tonos suaves y bien integrados que realzan tu belleza natural.',
     image:
       'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=900&q=80'
   },
   {
-    title: 'Repair and Hydration Treatments',
-    text: 'Bring your hair back to life with professional care.',
+    title: 'Reparacion e hidratacion',
+    text: 'Devolvemos vida al cabello con cuidado profesional.',
     image:
       'https://images.unsplash.com/photo-1605980776566-0486c3ac7617?auto=format&fit=crop&w=900&q=80'
   },
   {
-    title: 'Family-Friendly Salon',
-    text: 'Services for women, men, and children.',
+    title: 'Salon para toda la familia',
+    text: 'Servicios para mujeres, hombres y ninos.',
     image:
       'https://images.unsplash.com/photo-1489278353717-f64c6ee8a4d2?auto=format&fit=crop&w=900&q=80'
   }
@@ -35,23 +35,23 @@ const cards = [
 const detailCards = [
   {
     icon: Scissors,
-    title: 'Precision Cuts',
-    text: 'Geometry and movement adapted to your lifestyle.'
+    title: 'Tecnica precisa',
+    text: 'Cortes con estructura y movimiento para tu dia a dia.'
   },
   {
     icon: Sparkles,
-    title: 'Color Artistry',
-    text: 'Luminous tones with a healthy, dimensional finish.'
+    title: 'Arte en color',
+    text: 'Acabados luminosos y naturales con dimension.'
   },
   {
     icon: ShieldPlus,
-    title: 'Care Protocols',
-    text: 'Professional rituals focused on repair and scalp comfort.'
+    title: 'Protocolos de cuidado',
+    text: 'Rituales profesionales para reparar y proteger.'
   },
   {
     icon: Users,
-    title: 'Community Feel',
-    text: 'Warm, approachable service with neighborhood trust.'
+    title: 'Trato cercano',
+    text: 'Ambiente de barrio, profesional y de confianza.'
   }
 ];
 
@@ -60,22 +60,22 @@ export function FeaturesBento() {
     <section id="about" className="py-24">
       <div className="mx-auto max-w-7xl space-y-10 px-6 lg:px-8">
         <SectionHeading
-          label="Our Workshop"
-          title="Artisan techniques, natural outcomes, and healthy hair first"
-          subtitle="Every appointment is designed with care so your look stays beautiful beyond the salon chair."
+          label="Nuestro Taller"
+          title="Tecnica artesana, resultados naturales y salud capilar"
+          subtitle="Cada cita esta pensada para que salgas bien hoy y te siga quedando bien manana."
         />
 
         <div className="grid gap-6 lg:grid-cols-4 lg:grid-rows-[300px_300px]">
           <RevealCard delay={0} className="premium-shadow relative overflow-hidden rounded-3xl lg:col-span-2 lg:row-span-2">
             <Image
               src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1400&q=80"
-              alt="Before and after hair transformation"
+              alt="Transformacion de cabello antes y despues"
               fill
               className="object-cover"
             />
             <div className="absolute inset-x-6 bottom-6 rounded-3xl bg-[#fafaf8]/90 p-6 backdrop-blur-sm">
-              <p className="text-2xl text-[#2E2E2E]">Where your hair gets the care it deserves</p>
-              <p className="mt-2 text-[#2E2E2E]/80">A salon focused on quality, not rush.</p>
+              <p className="text-2xl text-[#2E2E2E]">Donde tu cabello recibe el cuidado que merece</p>
+              <p className="mt-2 text-[#2E2E2E]/80">Un salon centrado en calidad, sin prisas.</p>
             </div>
           </RevealCard>
 
@@ -106,14 +106,14 @@ export function FeaturesBento() {
           <RevealCard delay={0} className="premium-shadow relative aspect-[4/5] overflow-hidden rounded-3xl">
             <Image
               src="https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&w=1200&q=80"
-              alt="Hair treatment process"
+              alt="Proceso de tratamiento capilar"
               fill
               className="object-cover"
             />
           </RevealCard>
 
           <div className="space-y-6">
-            <h3 className="text-balance text-4xl">Designed for long-term hair confidence</h3>
+            <h3 className="text-balance text-4xl">Pensado para una confianza duradera</h3>
             <div className="grid gap-4 sm:grid-cols-2">
               {detailCards.map((item, index) => (
                 <RevealCard

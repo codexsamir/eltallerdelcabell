@@ -13,7 +13,7 @@ function Column({ items, direction }: { items: typeof testimonials; direction: '
       <div className={`${className} flex flex-col gap-4`}>
         {looped.map((item, index) => (
           <article key={`${item.name}-${index}`} className="premium-shadow rounded-3xl bg-[#fafaf8] p-6">
-            <p className="text-3xl leading-tight text-[#2E2E2E]">“{item.quote}”</p>
+            <p className="text-3xl leading-tight text-[#2E2E2E]">"{item.quote}"</p>
             <div className="mt-4 flex items-center justify-between">
               <div>
                 <p className="font-medium">{item.name}</p>
@@ -41,9 +41,9 @@ export function TestimonialsSection() {
     <section id="reviews" className="py-24">
       <div className="mx-auto max-w-7xl space-y-10 px-6 lg:px-8">
         <SectionHeading
-          label="Client Love"
-          title="Consistently trusted by clients across Calafell and Tarragona"
-          subtitle="Real experiences from guests who come back for healthy, natural-looking results."
+          label="Resenas"
+          title="Clientes de Calafell y Tarragona que siguen confiando en nosotras"
+          subtitle="Experiencias reales de quienes vuelven por resultados naturales y duraderos."
           center
         />
 

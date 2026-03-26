@@ -35,40 +35,40 @@ export function BookingFlow({ initialService }: { initialService?: string }) {
     <main className="min-h-screen bg-[#fafaf8] px-6 pb-24 pt-36 lg:px-8">
       <div className="mx-auto max-w-5xl space-y-10">
         <SectionHeading
-          label="Booking"
-          title="Calendar selection, time slots, staff choice, and confirmation"
-          subtitle="Secure your appointment in a guided flow built for speed on mobile and desktop."
+          label="Reserva"
+          title="Seleccion de fecha, horario, estilista y confirmacion"
+          subtitle="Completa tu reserva en un flujo rapido y claro desde movil o escritorio."
         />
 
         <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
           <RevealCard delay={0} className="premium-shadow rounded-3xl bg-[#f4efea] p-6 md:p-8">
-            <p className="text-xs uppercase tracking-[0.3em] text-[#2E2E2E]/70">Step {step} of 4</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-[#2E2E2E]/70">Paso {step} de 4</p>
             <h2 className="mt-3 text-4xl">{service}</h2>
 
             {step === 1 ? (
               <div className="mt-6 space-y-4">
-                <label className="block text-sm uppercase tracking-wide">Select Date</label>
+                <label className="block text-sm uppercase tracking-wide">Selecciona fecha</label>
                 <input
                   type="date"
                   value={date}
                   onChange={(event) => setDate(event.target.value)}
                   min="2026-03-26"
                   className="rounded-3xl border-0 bg-[#fafaf8] p-3"
-                  aria-label="Select booking date"
+                  aria-label="Seleccionar fecha"
                 />
                 <button
                   onClick={() => setStep(2)}
                   className="rounded-full bg-[#8C6A5D] px-6 py-3 text-sm uppercase tracking-wide text-[#fafaf8]"
-                  aria-label="Continue to time slots"
+                  aria-label="Continuar a horarios"
                 >
-                  Continue
+                  Continuar
                 </button>
               </div>
             ) : null}
 
             {step === 2 ? (
               <div className="mt-6 space-y-4">
-                <p className="text-sm uppercase tracking-wide">Choose Time Slot</p>
+                <p className="text-sm uppercase tracking-wide">Elige horario</p>
                 <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
                   {slots.map((slot) => (
                     <button
@@ -77,7 +77,7 @@ export function BookingFlow({ initialService }: { initialService?: string }) {
                       className={`rounded-full px-3 py-2 text-sm ${
                         time === slot ? 'bg-[#8C6A5D] text-[#fafaf8]' : 'bg-[#fafaf8] text-[#2E2E2E]/80'
                       }`}
-                      aria-label={`Select ${slot}`}
+                      aria-label={`Seleccionar ${slot}`}
                     >
                       {slot}
                     </button>
@@ -86,16 +86,16 @@ export function BookingFlow({ initialService }: { initialService?: string }) {
                 <button
                   onClick={() => setStep(3)}
                   className="rounded-full bg-[#8C6A5D] px-6 py-3 text-sm uppercase tracking-wide text-[#fafaf8]"
-                  aria-label="Continue to staff selection"
+                  aria-label="Continuar a estilista"
                 >
-                  Continue
+                  Continuar
                 </button>
               </div>
             ) : null}
 
             {step === 3 ? (
               <div className="mt-6 space-y-4">
-                <p className="text-sm uppercase tracking-wide">Select Staff</p>
+                <p className="text-sm uppercase tracking-wide">Selecciona estilista</p>
                 <div className="grid gap-3">
                   {staffList.map((person) => (
                     <button
@@ -104,7 +104,7 @@ export function BookingFlow({ initialService }: { initialService?: string }) {
                       className={`rounded-3xl p-4 text-left ${
                         staff === person ? 'bg-[#8C6A5D] text-[#fafaf8]' : 'bg-[#fafaf8] text-[#2E2E2E]/80'
                       }`}
-                      aria-label={`Select ${person}`}
+                      aria-label={`Seleccionar ${person}`}
                     >
                       {person}
                     </button>
@@ -113,9 +113,9 @@ export function BookingFlow({ initialService }: { initialService?: string }) {
                 <button
                   onClick={confirm}
                   className="rounded-full bg-[#2E2E2E] px-6 py-3 text-sm uppercase tracking-wide text-[#fafaf8]"
-                  aria-label="Confirm booking"
+                  aria-label="Confirmar reserva"
                 >
-                  Confirm Booking
+                  Confirmar reserva
                 </button>
               </div>
             ) : null}
@@ -124,36 +124,36 @@ export function BookingFlow({ initialService }: { initialService?: string }) {
               <div className="mt-6 rounded-3xl bg-[#fafaf8] p-6">
                 <div className="inline-flex items-center gap-2 text-[#8C6A5D]">
                   <CheckCircle2 size={18} />
-                  <span className="text-sm uppercase tracking-wide">Confirmed</span>
+                  <span className="text-sm uppercase tracking-wide">Reserva confirmada</span>
                 </div>
                 <p className="mt-3 text-[#2E2E2E]/80">
-                  Your appointment is booked for {date} at {time} with {staff}.
+                  Tu cita esta reservada para el {date} a las {time} con {staff}.
                 </p>
                 <Link
                   href="/"
                   className="mt-4 inline-block text-sm uppercase tracking-wide text-[#8C6A5D]"
-                  aria-label="Back to homepage"
+                  aria-label="Volver al inicio"
                 >
-                  Back to homepage
+                  Volver al inicio
                 </Link>
               </div>
             ) : null}
           </RevealCard>
 
           <RevealCard delay={80} className="premium-shadow h-fit rounded-3xl bg-[#f4efea] p-6">
-            <p className="text-sm uppercase tracking-[0.3em] text-[#2E2E2E]/70">Summary</p>
+            <p className="text-sm uppercase tracking-[0.3em] text-[#2E2E2E]/70">Resumen</p>
             <div className="mt-4 space-y-2 text-sm text-[#2E2E2E]/80">
-              <p>Service: {service}</p>
-              <p>Date: {date}</p>
-              <p>Time: {time}</p>
-              <p>Stylist: {staff}</p>
+              <p>Servicio: {service}</p>
+              <p>Fecha: {date}</p>
+              <p>Hora: {time}</p>
+              <p>Estilista: {staff}</p>
             </div>
             <Link
               href="/services"
               className="mt-6 inline-block rounded-full bg-[#8C6A5D] px-5 py-3 text-xs uppercase tracking-wide text-[#fafaf8]"
-              aria-label="Back to services"
+              aria-label="Volver a servicios"
             >
-              Change Service
+              Cambiar servicio
             </Link>
           </RevealCard>
         </div>

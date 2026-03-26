@@ -18,9 +18,9 @@ export function MapInstagramSection() {
     <section className="py-24">
       <div className="mx-auto max-w-7xl space-y-10 px-6 lg:px-8">
         <SectionHeading
-          label="Visit and Follow"
-          title="Find us in Calafell and explore our latest transformations"
-          subtitle="Integrated location and social gallery to make booking and discovery seamless."
+          label="Visitanos"
+          title="Encuentranos en Calafell y descubre nuestros ultimos trabajos"
+          subtitle="Ubicacion y galeria social integradas para facilitar reserva y descubrimiento."
         />
 
         <div className="grid gap-6 lg:grid-cols-2">
@@ -33,14 +33,14 @@ export function MapInstagramSection() {
                 href="https://maps.google.com"
                 target="_blank"
                 className="inline-flex items-center gap-1 text-xs uppercase tracking-wide text-[#8C6A5D]"
-                aria-label="Open map"
+                aria-label="Abrir mapa"
               >
-                Open map <ExternalLink size={13} />
+                Ver mapa <ExternalLink size={13} />
               </Link>
             </div>
             <div className="overflow-hidden rounded-3xl">
               <iframe
-                title="El Taller del Cabell map"
+                title="Mapa de El Taller del Cabell"
                 src="https://www.google.com/maps?q=Calafell&output=embed"
                 className="h-[380px] w-full border-0"
                 loading="lazy"
@@ -50,14 +50,14 @@ export function MapInstagramSection() {
 
           <RevealCard delay={80} className="premium-shadow rounded-3xl bg-[#f4efea] p-4">
             <div className="mb-4 flex items-center justify-between">
-              <p className="text-sm uppercase tracking-wide text-[#2E2E2E]/80">Instagram gallery</p>
+              <p className="text-sm uppercase tracking-wide text-[#2E2E2E]/80">Galeria de Instagram</p>
               <Link
                 href="https://instagram.com"
                 target="_blank"
                 className="inline-flex items-center gap-1 text-xs uppercase tracking-wide text-[#8C6A5D]"
-                aria-label="Open Instagram"
+                aria-label="Abrir Instagram"
               >
-                Follow <ExternalLink size={13} />
+                Seguir <ExternalLink size={13} />
               </Link>
             </div>
             <div className="grid grid-cols-2 gap-3">
@@ -65,7 +65,7 @@ export function MapInstagramSection() {
                 <div key={image} className="group relative aspect-square overflow-hidden rounded-3xl">
                   <Image
                     src={image}
-                    alt={`Instagram style gallery ${index + 1}`}
+                    alt={`Galeria de Instagram ${index + 1}`}
                     fill
                     className="object-cover transition-all duration-300 ease-out group-hover:scale-[1.02]"
                   />

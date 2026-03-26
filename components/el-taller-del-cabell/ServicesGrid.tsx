@@ -8,10 +8,10 @@ import { serviceItems } from './data';
 import { RevealCard } from './RevealCard';
 import { SectionHeading } from './SectionHeading';
 
-const categories = ['Haircuts', 'Color', 'Treatment', 'Styling'] as const;
+const categories = ['Cortes', 'Color', 'Tratamientos', 'Peinado'] as const;
 
 export function ServicesGrid() {
-  const [activeCategory, setActiveCategory] = useState<(typeof categories)[number]>('Haircuts');
+  const [activeCategory, setActiveCategory] = useState<(typeof categories)[number]>('Cortes');
   const [isFading, setIsFading] = useState(false);
 
   const filtered = useMemo(
@@ -34,9 +34,9 @@ export function ServicesGrid() {
     <section id="services" className="py-24">
       <div className="mx-auto max-w-7xl space-y-10 px-6 lg:px-8">
         <SectionHeading
-          label="Services"
-          title="From everyday polish to full transformations"
-          subtitle="Choose the service category and explore what fits your hair goals."
+          label="Servicios"
+          title="Desde el mantenimiento diario hasta cambios completos"
+          subtitle="Elige una categoria y encuentra el servicio ideal para tu cabello."
         />
 
         <div className="premium-shadow relative inline-flex rounded-full bg-[#fafaf8] p-1">
@@ -54,7 +54,7 @@ export function ServicesGrid() {
               className={`relative z-10 rounded-full px-5 py-2 text-sm uppercase tracking-wide transition-all duration-300 ease-out ${
                 category === activeCategory ? 'text-[#fafaf8]' : 'text-[#2E2E2E]/80'
               }`}
-              aria-label={`Filter ${category}`}
+              aria-label={`Filtrar por ${category}`}
             >
               {category}
             </button>
@@ -73,12 +73,7 @@ export function ServicesGrid() {
               className="premium-shadow group rounded-3xl bg-[#f4efea] p-4 transition-all duration-300 ease-out hover:scale-[1.02]"
             >
               <div className="relative aspect-square overflow-hidden rounded-3xl">
-                <Image
-                  src={service.image}
-                  alt={service.name}
-                  fill
-                  className="object-cover"
-                />
+                <Image src={service.image} alt={service.name} fill className="object-cover" />
                 {service.badge ? (
                   <span className="absolute left-3 top-3 rounded-full bg-[#8C6A5D] px-3 py-1 text-xs uppercase tracking-wide text-[#fafaf8]">
                     {service.badge}
@@ -86,7 +81,7 @@ export function ServicesGrid() {
                 ) : null}
                 <button
                   className="premium-shadow absolute bottom-3 right-3 translate-y-2 rounded-full bg-[#fafaf8] p-3 opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100"
-                  aria-label={`Quick add ${service.name}`}
+                  aria-label={`Accion rapida ${service.name}`}
                 >
                   <Plus size={16} />
                 </button>
@@ -98,9 +93,9 @@ export function ServicesGrid() {
                 <Link
                   href={`/services/booking?service=${encodeURIComponent(service.name)}`}
                   className="text-sm uppercase tracking-wide text-[#2E2E2E]/80 transition-all duration-300 ease-out hover:text-[#8C6A5D]"
-                  aria-label={`Book ${service.name}`}
+                  aria-label={`Reservar ${service.name}`}
                 >
-                  Book now
+                  Reservar
                 </Link>
               </div>
             </RevealCard>

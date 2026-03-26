@@ -1,43 +1,43 @@
 export const serviceItems = [
   {
-    name: "Women's Haircut",
-    description: 'Wash, cut, styling',
+    name: 'Corte Mujer',
+    description: 'Lavado, corte y peinado',
     price: 'EUR25-EUR35',
-    category: 'Haircuts',
+    category: 'Cortes',
     badge: 'Popular',
     image:
       'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=900&q=80'
   },
   {
-    name: "Men's Haircut",
-    description: 'Clean, modern cut',
+    name: 'Corte Hombre',
+    description: 'Corte limpio y moderno',
     price: 'EUR15-EUR20',
-    category: 'Haircuts',
+    category: 'Cortes',
     badge: '',
     image:
       'https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=80'
   },
   {
-    name: "Children's Haircut",
-    description: 'Gentle service for kids',
+    name: 'Corte Infantil',
+    description: 'Servicio suave para ninos',
     price: 'EUR12-EUR18',
-    category: 'Haircuts',
+    category: 'Cortes',
     badge: '',
     image:
       'https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?auto=format&fit=crop&w=900&q=80'
   },
   {
-    name: 'Blow Dry',
-    description: 'Smooth or volume finish',
+    name: 'Secado',
+    description: 'Acabado liso o con volumen',
     price: 'EUR18-EUR25',
-    category: 'Styling',
+    category: 'Peinado',
     badge: '',
     image:
       'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=80'
   },
   {
-    name: 'Full Color',
-    description: 'Complete color service',
+    name: 'Color Completo',
+    description: 'Servicio completo de color',
     price: 'EUR45-EUR65',
     category: 'Color',
     badge: '',
@@ -45,17 +45,17 @@ export const serviceItems = [
       'https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=900&q=80'
   },
   {
-    name: 'Highlights',
-    description: 'Classic or modern highlights',
+    name: 'Mechas',
+    description: 'Mechas clasicas o modernas',
     price: 'EUR60-EUR90',
     category: 'Color',
-    badge: 'Trending',
+    badge: 'Tendencia',
     image:
       'https://images.unsplash.com/photo-1616391182219-e080b4d1043a?auto=format&fit=crop&w=900&q=80'
   },
   {
     name: 'Balayage',
-    description: 'Natural blended color',
+    description: 'Color natural difuminado',
     price: 'EUR80+',
     category: 'Color',
     badge: 'Premium',
@@ -63,28 +63,28 @@ export const serviceItems = [
       'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80'
   },
   {
-    name: 'Hair Treatment',
-    description: 'Deep hydration/repair',
+    name: 'Tratamiento Capilar',
+    description: 'Hidratacion y reparacion profunda',
     price: 'EUR20-EUR40',
-    category: 'Treatment',
-    badge: 'Recommended',
+    category: 'Tratamientos',
+    badge: 'Recomendado',
     image:
       'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=900&q=80'
   },
   {
-    name: 'Keratin Treatment',
-    description: 'Smooth, anti-frizz',
+    name: 'Tratamiento de Queratina',
+    description: 'Alisado y control del encrespado',
     price: 'EUR100+',
-    category: 'Treatment',
-    badge: 'Bestseller',
+    category: 'Tratamientos',
+    badge: 'Mas vendido',
     image:
       'https://images.unsplash.com/photo-1549237511-9f5f65d0f43e?auto=format&fit=crop&w=900&q=80'
   },
   {
-    name: 'Event Styling',
-    description: 'Special occasion hair',
+    name: 'Peinado para Eventos',
+    description: 'Peinados para ocasiones especiales',
     price: 'EUR40-EUR60',
-    category: 'Styling',
+    category: 'Peinado',
     badge: '',
     image:
       'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=80'
@@ -96,7 +96,7 @@ export const testimonials = [
     name: 'Maria',
     city: 'Calafell',
     quote: 'Muy contenta con el trato y resultado.',
-    service: 'Haircut'
+    service: 'Corte'
   },
   {
     name: 'Laura',
@@ -108,7 +108,7 @@ export const testimonials = [
     name: 'Ana',
     city: 'Calafell',
     quote: 'Ambiente muy agradable y profesional.',
-    service: 'Styling'
+    service: 'Peinado'
   },
   {
     name: 'Sonia',
@@ -120,30 +120,30 @@ export const testimonials = [
     name: 'Claudia',
     city: 'Tarragona',
     quote: 'Gran atencion y cuidado del cabello.',
-    service: 'Treatment'
+    service: 'Tratamiento'
   },
   {
     name: 'Elena',
     city: 'Calafell',
     quote: 'Muy recomendable.',
-    service: 'Haircut'
+    service: 'Corte'
   },
   {
     name: 'Paula',
     city: 'Sitges',
     quote: 'Resultados naturales y bonitos.',
-    service: 'Highlights'
+    service: 'Mechas'
   },
   {
     name: 'Nuria',
     city: 'Tarragona',
     quote: 'Volvere seguro.',
-    service: 'Blow dry'
+    service: 'Secado'
   },
   {
     name: 'Marta',
     city: 'Calafell',
     quote: 'Profesionales y cercanos.',
-    service: 'Keratin'
+    service: 'Queratina'
   }
 ];

@@ -9,9 +9,9 @@ import { RevealCard } from '@/components/el-taller-del-cabell/RevealCard';
 import { useSalon } from '@/context/SalonContext';
 import { useRouter } from 'next/navigation';
 
-const categories = ['All', 'Haircuts', 'Color', 'Treatment', 'Styling'];
-const durations = ['Any', '30 min', '45 min', '60+ min'];
-const prices = ['All', '< EUR30', 'EUR30-EUR70', 'EUR70+'];
+const categories = ['Todas', 'Cortes', 'Color', 'Tratamientos', 'Peinado'];
+const durations = ['Cualquiera', '30 min', '45 min', '60+ min'];
+const prices = ['Todas', '< EUR30', 'EUR30-EUR70', 'EUR70+'];
 
 function parsePrice(price: string) {
   const numeric = Number(price.replace(/[^0-9]/g, '').slice(0, 3) || '0');
@@ -19,17 +19,17 @@ function parsePrice(price: string) {
 }
 
 export default function ServicesPage() {
-  const [category, setCategory] = useState('All');
-  const [duration, setDuration] = useState('Any');
-  const [price, setPrice] = useState('All');
-  const [sortBy, setSortBy] = useState('Popularity');
+  const [category, setCategory] = useState('Todas');
+  const [duration, setDuration] = useState('Cualquiera');
+  const [price, setPrice] = useState('Todas');
+  const [sortBy, setSortBy] = useState('Popularidad');
 
   const { setSelectedService } = useSalon();
   const router = useRouter();
 
   const filtered = useMemo(() => {
     const list = serviceItems.filter((item) => {
-      const byCategory = category === 'All' || item.category === category;
+      const byCategory = category === 'Todas' || item.category === category;
 
       let byPrice = true;
       const value = parsePrice(item.price);
@@ -38,19 +38,19 @@ export default function ServicesPage() {
       if (price === 'EUR70+') byPrice = value > 70;
 
       const byDuration =
-        duration === 'Any' ||
-        (duration === '30 min' && item.category === 'Haircuts') ||
-        (duration === '45 min' && item.category === 'Styling') ||
-        (duration === '60+ min' && (item.category === 'Color' || item.category === 'Treatment'));
+        duration === 'Cualquiera' ||
+        (duration === '30 min' && item.category === 'Cortes') ||
+        (duration === '45 min' && item.category === 'Peinado') ||
+        (duration === '60+ min' && (item.category === 'Color' || item.category === 'Tratamientos'));
 
       return byCategory && byPrice && byDuration;
     });
 
-    if (sortBy === 'Price') {
+    if (sortBy === 'Precio') {
       return [...list].sort((a, b) => parsePrice(a.price) - parsePrice(b.price));
     }
 
-    if (sortBy === 'Duration') {
+    if (sortBy === 'Duracion') {
       return [...list].sort((a, b) => a.category.localeCompare(b.category));
     }
 
@@ -61,23 +61,23 @@ export default function ServicesPage() {
     <main className="min-h-screen bg-[#fafaf8] px-6 pb-24 pt-36 lg:px-8">
       <div className="mx-auto max-w-7xl space-y-10">
         <SectionHeading
-          label="Services Catalog"
-          title="Premium salon services with transparent filters and fast booking"
-          subtitle="Explore services by category, price range, and duration, then reserve your slot in seconds."
+          label="Catalogo de Servicios"
+          title="Servicios premium con filtros claros y reserva rapida"
+          subtitle="Explora por categoria, precio y duracion, y reserva tu hueco en segundos."
         />
 
         <div className="grid gap-6 lg:grid-cols-[300px_1fr]">
           <aside className="premium-shadow h-fit rounded-3xl bg-[#f4efea] p-6">
-            <p className="text-sm uppercase tracking-[0.3em] text-[#2E2E2E]/70">Filters</p>
+            <p className="text-sm uppercase tracking-[0.3em] text-[#2E2E2E]/70">Filtros</p>
 
             <div className="mt-6 space-y-5">
               <div>
-                <label className="mb-2 block text-sm uppercase tracking-wide">Category</label>
+                <label className="mb-2 block text-sm uppercase tracking-wide">Categoria</label>
                 <select
                   value={category}
                   onChange={(event) => setCategory(event.target.value)}
                   className="w-full rounded-3xl border-0 bg-[#fafaf8] p-3"
-                  aria-label="Filter by category"
+                  aria-label="Filtrar por categoria"
                 >
                   {categories.map((item) => (
                     <option key={item}>{item}</option>
@@ -86,12 +86,12 @@ export default function ServicesPage() {
               </div>
 
               <div>
-                <label className="mb-2 block text-sm uppercase tracking-wide">Price Range</label>
+                <label className="mb-2 block text-sm uppercase tracking-wide">Rango de precio</label>
                 <select
                   value={price}
                   onChange={(event) => setPrice(event.target.value)}
                   className="w-full rounded-3xl border-0 bg-[#fafaf8] p-3"
-                  aria-label="Filter by price"
+                  aria-label="Filtrar por precio"
                 >
                   {prices.map((item) => (
                     <option key={item}>{item}</option>
@@ -100,12 +100,12 @@ export default function ServicesPage() {
               </div>
 
               <div>
-                <label className="mb-2 block text-sm uppercase tracking-wide">Duration</label>
+                <label className="mb-2 block text-sm uppercase tracking-wide">Duracion</label>
                 <select
                   value={duration}
                   onChange={(event) => setDuration(event.target.value)}
                   className="w-full rounded-3xl border-0 bg-[#fafaf8] p-3"
-                  aria-label="Filter by duration"
+                  aria-label="Filtrar por duracion"
                 >
                   {durations.map((item) => (
                     <option key={item}>{item}</option>
@@ -117,14 +117,14 @@ export default function ServicesPage() {
 
           <section className="space-y-6">
             <div className="premium-shadow inline-flex rounded-full bg-[#f4efea] p-1">
-              {['Popularity', 'Price', 'Duration'].map((sort) => (
+              {['Popularidad', 'Precio', 'Duracion'].map((sort) => (
                 <button
                   key={sort}
                   onClick={() => setSortBy(sort)}
                   className={`rounded-full px-4 py-2 text-sm uppercase tracking-wide transition-all duration-300 ease-out ${
                     sortBy === sort ? 'bg-[#8C6A5D] text-[#fafaf8]' : 'text-[#2E2E2E]/80'
                   }`}
-                  aria-label={`Sort by ${sort}`}
+                  aria-label={`Ordenar por ${sort}`}
                 >
                   {sort}
                 </button>
@@ -147,9 +147,9 @@ export default function ServicesPage() {
                         router.push(`/services/booking?service=${encodeURIComponent(service.name)}`);
                       }}
                       className="group inline-flex items-center gap-2 rounded-full bg-[#8C6A5D] px-4 py-2 text-xs uppercase tracking-wide text-[#fafaf8]"
-                      aria-label={`Book ${service.name}`}
+                      aria-label={`Reservar ${service.name}`}
                     >
-                      Book now
+                      Reservar
                       <ArrowRight size={14} className="transition-all duration-300 ease-out group-hover:translate-x-1" />
                     </button>
                   </div>

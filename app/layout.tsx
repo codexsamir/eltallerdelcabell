@@ -7,7 +7,7 @@ import { Footer } from '@/components/el-taller-del-cabell/Footer';
 export const metadata: Metadata = {
   title: 'El Taller del Cabell | Peluqueria Calafell',
   description:
-    'Peluqueria en Calafell especializada en cortes, color y tratamientos de salud capilar con resultados naturales.',
+    'Peluqueria en Calafell especializada en cortes, color y tratamientos capilares con resultados naturales.',
   keywords: [
     'Peluqueria Calafell',
     'Color cabello Tarragona',

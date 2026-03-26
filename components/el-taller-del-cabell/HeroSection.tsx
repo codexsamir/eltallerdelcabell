@@ -32,26 +32,26 @@ export function HeroSection() {
           className={`reveal-text ${isVisible ? 'is-visible animate-blur-in' : ''} text-balance max-w-4xl text-5xl leading-[0.95] text-[#2E2E2E] md:text-7xl`}
           style={{ animationDelay: '0.4s' }}
         >
-          Healthy Hair, Beautiful Results Every Time
+          Cabello sano, resultados bonitos siempre
         </h1>
         <p
           className={`reveal-text ${isVisible ? 'is-visible animate-blur-in' : ''} mt-6 max-w-2xl text-lg text-[#2E2E2E]/80`}
           style={{ animationDelay: '0.6s' }}
         >
-          Expert cuts, color, and treatments tailored to your style in Calafell.
+          Cortes, color y tratamientos expertos adaptados a tu estilo en Calafell.
         </p>
 
         <Link
           href="/services/booking"
           className="group premium-shadow mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-[#8C6A5D] px-7 py-4 text-sm uppercase tracking-wider text-[#fafaf8] transition-all duration-300 ease-out hover:scale-[1.02]"
-          aria-label="Book your appointment"
+          aria-label="Reservar cita"
         >
-          Book Your Appointment
+          Reserva tu cita
           <ArrowRight className="transition-all duration-300 ease-out group-hover:translate-x-1" size={16} />
         </Link>
 
         <div className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-[#2E2E2E]/70">
-          <span className="text-xs uppercase tracking-[0.3em]">Scroll</span>
+          <span className="text-xs uppercase tracking-[0.3em]">Desliza</span>
           <span className="h-10 w-px animate-pulse bg-[#2E2E2E]/70" />
         </div>
       </div>
